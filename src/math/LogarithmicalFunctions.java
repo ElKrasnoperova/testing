@@ -21,7 +21,6 @@ public class LogarithmicalFunctions implements ILogarithmicalFunctions {
     @Override
     public double log5(double x, double precision) {
         return baseLn.ln(x, precision) / baseLn.ln(5, precision);
-
     }
 
     @Override
