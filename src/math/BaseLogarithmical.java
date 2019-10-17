@@ -5,22 +5,22 @@ public class BaseLogarithmical implements IBaseLogarithmical {
     private Double eps;
     @Override
     public double ln(double x, double precision) {
-        if (Double.isNaN(x) || x <= 0 || x == Double.POSITIVE_INFINITY) {
-            return Double.NaN;
-        }
+        if (Double.isNaN(x) || x < 0) return Double.NaN;
+        if (x == 0) return Double.NEGATIVE_INFINITY;
+        if (x == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
 
         double result = 0.0;
 
         if (x > 1) {
             while (x > 1) {
                 result += LN10;
-                x = x/10;
+                x = x / 10;
             }
         }
 
         double tmp_result = 1;
         for (double n = 1.0; Math.abs(tmp_result) > precision; n++) {
-            tmp_result = Math.pow((-1), (n+1)) * Math.pow((x - 1.0), n) / n ;
+            tmp_result = Math.pow((-1), (n + 1)) * Math.pow((x - 1.0), n) / n ;
             result += tmp_result;
         }
         return result;
@@ -28,7 +28,7 @@ public class BaseLogarithmical implements IBaseLogarithmical {
 
 //    public static void main(String[] args) {
 //        BaseLogarithmical lg = new BaseLogarithmical();
-//        System.out.println(lg.ln(1000, 0.001));
+//        System.out.println(lg.ln(0, 0.001));
 //    }
 }
 
