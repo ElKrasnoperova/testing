@@ -1,7 +1,8 @@
-package math;
+package mathTest;
 
-import org.junit.Assert;
+import math.LogarithmicalFunctions;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,9 +10,10 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+@Category(IntegrationTests.class)
 public class LogarithmicalFunctionsTest {
-
     private LogarithmicalFunctions func = new LogarithmicalFunctions();
+
     @Test
     public void log2_moreThanOne() {
         List<Integer> toCalculate = Arrays.asList(2, 8, 32, 128, 512, 2048);
@@ -19,7 +21,7 @@ public class LogarithmicalFunctionsTest {
         int iter = 0;
         for (Integer integer : toCalculate) {
             double ln = func.log2(integer, 0.0001);
-            Assert.assertEquals(requiredList.get(iter), ln, 0.01);
+            assertEquals(requiredList.get(iter), ln, 0.01);
             iter++;
         }
     }
@@ -31,7 +33,7 @@ public class LogarithmicalFunctionsTest {
         int iter = 0;
         for (Double d : toCalculate) {
             double ln = func.log2(d, 0.0001);
-            Assert.assertEquals(requiredList.get(iter), ln, 0.01);
+            assertEquals(requiredList.get(iter), ln, 0.01);
             iter++;
         }
     }
@@ -43,7 +45,7 @@ public class LogarithmicalFunctionsTest {
         int iter = 0;
         for (Double d : toCalculate) {
             double ln = func.log3(d, 0.0001);
-            Assert.assertEquals(requiredList.get(iter), ln, 0.01);
+            assertEquals(requiredList.get(iter), ln, 0.01);
             iter++;
         }
     }
@@ -55,7 +57,7 @@ public class LogarithmicalFunctionsTest {
         int iter = 0;
         for (Double d : toCalculate) {
             double ln = func.log3(d, 0.0001);
-            Assert.assertEquals(requiredList.get(iter), ln, 0.01);
+            assertEquals(requiredList.get(iter), ln, 0.01);
             iter++;
         }
     }
@@ -67,7 +69,7 @@ public class LogarithmicalFunctionsTest {
         int iter = 0;
         for (Double d : toCalculate) {
             double ln = func.log5(d, 0.0001);
-            Assert.assertEquals(requiredList.get(iter), ln, 0.01);
+            assertEquals(requiredList.get(iter), ln, 0.01);
             iter++;
         }
     }
@@ -79,7 +81,7 @@ public class LogarithmicalFunctionsTest {
         int iter = 0;
         for (Double d : toCalculate) {
             double ln = func.log5(d, 0.0001);
-            Assert.assertEquals(requiredList.get(iter), ln, 0.01);
+            assertEquals(requiredList.get(iter), ln, 0.01);
             iter++;
         }
     }
@@ -91,7 +93,7 @@ public class LogarithmicalFunctionsTest {
         int iter = 0;
         for (Double d : toCalculate) {
             double ln = func.log10(d, 0.0001);
-            Assert.assertEquals(requiredList.get(iter), ln, 0.01);
+            assertEquals(requiredList.get(iter), ln, 0.01);
             iter++;
         }
     }
@@ -103,7 +105,7 @@ public class LogarithmicalFunctionsTest {
         int iter = 0;
         for (Double d : toCalculate) {
             double ln = func.log10(d, 0.0001);
-            Assert.assertEquals(requiredList.get(iter), ln, 0.01);
+            assertEquals(requiredList.get(iter), ln, 0.01);
             iter++;
         }
     }

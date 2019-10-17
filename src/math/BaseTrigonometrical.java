@@ -1,7 +1,6 @@
 package math;
 
-public class BaseTrigonometrical implements IBaseTrigonometrical {
-
+public class BaseTrigonometrical extends AbstractMath implements IBaseTrigonometrical {
 
     @Override
     public double sin(double x, double precision) {
@@ -32,10 +31,5 @@ public class BaseTrigonometrical implements IBaseTrigonometrical {
             x -= delta;
         }
         return x;
-    }
-
-    public static void main(String[] args) {
-        BaseTrigonometrical lg = new BaseTrigonometrical();
-        System.out.println(lg.sin(-2, 0.001));
     }
 }

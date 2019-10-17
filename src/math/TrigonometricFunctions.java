@@ -1,6 +1,6 @@
 package math;
 
-public class TrigonometricFunctions implements ITrigonomerticFunctions {
+public class TrigonometricFunctions extends AbstractMath implements ITrigonomerticFunctions {
 
     private BaseTrigonometrical sinBase = new BaseTrigonometrical();
     @Override
@@ -37,11 +37,6 @@ public class TrigonometricFunctions implements ITrigonomerticFunctions {
     public double csc(double x, double precision) {
         double sin = sinBase.sin(x, precision);
         return (sin == 0) ? Double.NaN : 1 / sin;
-    }
-
-    public static void main(String[] args) {
-        TrigonometricFunctions tf = new TrigonometricFunctions();
-        System.out.println(tf.csc(0, 0.001));
     }
 }
 

@@ -1,20 +1,22 @@
-package math;
+package mathTest;
 
-import org.junit.Assert;
+import math.LogarithmeticalExpression;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
+@Category(IntegrationTests.class)
 public class LogarithmeticalExpressionTest {
+    private LogarithmeticalExpression expr = new LogarithmeticalExpression();
 
-    LogarithmeticalExpression expr = new LogarithmeticalExpression();
     @Test
     public void calculate_one() {
         double value = expr.calculate(1, 0.001);
-        Assert.assertEquals(Double.NaN, value, 0.01);
+        assertEquals(Double.NaN, value, 0.01);
     }
 
     @Test
@@ -23,7 +25,7 @@ public class LogarithmeticalExpressionTest {
         List<Double> requiredList = Arrays.asList(-1.456, 53.944, 1021.08, 263070.0, 8427.7, 1463.05);
         for (int i = 0; i < toCalculate.size(); ++i) {
             double value = expr.calculate(toCalculate.get(i), 0.000001);
-            Assert.assertEquals(requiredList.get(i), value, 0.1);
+            assertEquals(requiredList.get(i), value, 0.1);
         }
     }
 }

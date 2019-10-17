@@ -1,8 +1,8 @@
 package math;
 
-public class LogarithmicalFunctions implements ILogarithmicalFunctions {
-
+public class LogarithmicalFunctions extends AbstractMath implements ILogarithmicalFunctions {
     private BaseLogarithmical baseLn = new BaseLogarithmical();
+
     @Override
     public double ln(double x, double precision) {
         return baseLn.ln(x, precision);
@@ -27,5 +27,4 @@ public class LogarithmicalFunctions implements ILogarithmicalFunctions {
     public double log10(double x, double precision) {
         return baseLn.ln(x, precision) / baseLn.ln(10, precision);
     }
-
 }
