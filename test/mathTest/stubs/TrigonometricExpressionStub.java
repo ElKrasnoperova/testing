@@ -1,16 +1,15 @@
-package math;
+package mathTest.stubs;
 
-public class TrigonometricExpression extends AbstractMath {
-    private TrigonometricFunctions func;
+import math.TrigonometricExpression;
 
-    public TrigonometricExpression(TrigonometricFunctions func) {
-        this.func = func;
-    }
+import java.util.ArrayList;
+import java.util.Arrays;
 
-    public TrigonometricExpression() {
-        this.func = new TrigonometricFunctions();
-    }
+public class TrigonometricExpressionStub extends TrigonometricExpression {
+    private TrigonometricFunctionsStub func = new TrigonometricFunctionsStub();
+    private ArrayList<Double> invalidVariables = new ArrayList<Double>(Arrays.asList(0.0, Math.PI, Math.PI / 2, -Math.PI / 2));
 
+    @Override
     public double calculate(double x, double precision) {
         if (x % (Math.PI / 2) == 0) {
             return Double.NaN;

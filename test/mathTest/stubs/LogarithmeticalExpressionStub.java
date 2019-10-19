@@ -1,16 +1,11 @@
-package math;
+package mathTest.stubs;
 
-public class LogarithmeticalExpression extends AbstractMath {
-    private LogarithmicalFunctions func;
+import math.LogarithmeticalExpression;
 
-    public LogarithmeticalExpression(LogarithmicalFunctions func) {
-        this.func = func;
-    }
+public class LogarithmeticalExpressionStub extends LogarithmeticalExpression {
+    private LogarithmicalFunctionsStub func = new LogarithmicalFunctionsStub();
 
-    public LogarithmeticalExpression() {
-        this.func = new LogarithmicalFunctions();
-    }
-
+    @Override
     public double calculate(double x, double precision) {
         if (x == 1 || x < 0) {
             return Double.NaN;

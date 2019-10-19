@@ -15,7 +15,7 @@ abstract class AbstractMath {
      * @param result double
      * @param param  String Дополнительный параметр, где можно передать имя функции для вывода вдокумент
      */
-    void printToCSV(double x, double result, String param) {
+    public void printToCSV(double x, double result, String param) {
         String filePath = System.getProperty("user.dir") + "/result/" + this.getClass().getSimpleName() + ".csv";
         try {
             BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath), StandardOpenOption.APPEND, StandardOpenOption.CREATE);

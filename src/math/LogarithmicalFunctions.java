@@ -1,7 +1,15 @@
 package math;
 
 public class LogarithmicalFunctions extends AbstractMath implements ILogarithmicalFunctions {
-    private BaseLogarithmical baseLn = new BaseLogarithmical();
+    private BaseLogarithmical baseLn;
+
+    public LogarithmicalFunctions(BaseLogarithmical baseLn) {
+        this.baseLn = baseLn;
+    }
+
+    public LogarithmicalFunctions() {
+        this.baseLn = new BaseLogarithmical();
+    }
 
     @Override
     public double ln(double x, double precision) {
